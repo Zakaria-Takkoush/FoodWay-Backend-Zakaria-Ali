@@ -2,7 +2,7 @@
 
 include("connection.php");
 
-$query = $mysqli->prepare("SELECT * from reviews");
+$query = $mysqli->prepare("SELECT * from reviews where status = 1" );
 $query->execute();
 $array = $query->get_result();
 
