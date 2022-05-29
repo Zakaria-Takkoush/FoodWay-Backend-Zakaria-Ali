@@ -14,7 +14,7 @@ $is_admin = 0;
 
 
 $query = $mysqli->prepare("INSERT INTO users(first_name, last_name, gender, email, password, phone_number, image, city_id, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$query->bind_param("sssssssii", $f_name, $l_name, $gender, $email, $password, $phone_number , $image, $city, $is_admin);
+$query->bind_param("ssissssii", $f_name, $l_name, $gender, $email, $password, $phone_number , $image, $city, $is_admin);
 $query->execute();
 
 $response = [];
