@@ -22,7 +22,7 @@ if($num_rows == 0){
     $response["user_id"] = $id;
 }
 
-$json == json_encode($response);
+$json = json_encode($response);
 echo $json;
 ?>
 
