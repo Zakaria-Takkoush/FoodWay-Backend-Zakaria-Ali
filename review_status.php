@@ -3,7 +3,8 @@
 include("connection.php");
 
 $review_id= $_POST["id"];
-$status =1;
+$type = $_POST["type"];
+$status = $type == 'accept' ? 1 : 0;
 
 $query = $mysqli->prepare("UPDATE `reviews` SET `status`= ? WHERE `rev_id` = ?");
 $query->bind_param("ii",$status,$review_id);
