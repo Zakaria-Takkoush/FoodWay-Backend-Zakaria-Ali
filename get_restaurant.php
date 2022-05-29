@@ -2,8 +2,12 @@
 
 include("connection.php");
 
-$query = $mysqli->prepare("SELECT * from restaurants");
+$resto_id = $_POST["resto_id"];
+
+$query = $mysqli->prepare("SELECT * from restaurants where resto_id = ?");
+$query->bind_param("i",$resto_id);
 $query->execute();
+
 $array = $query->get_result();
 
 $response = [];
