@@ -9,9 +9,11 @@ $query = $mysqli->prepare("Select user_id from users where email = ? AND passwor
 $query->bind_param("ss", $email, $password);
 $query->execute();
 $query->store_result();
+
 $num_rows = $query->num_rows;
 $query->bind_result($id);
 $query->fetch();
+
 $response = [];
 if($num_rows == 0){
     $response["response"] = "User Not Found";
@@ -19,6 +21,7 @@ if($num_rows == 0){
     $response["response"] = "Logged in";
     $response["user_id"] = $id;
 }
+
 $json == json_encode($response);
 echo $json;
 ?>
