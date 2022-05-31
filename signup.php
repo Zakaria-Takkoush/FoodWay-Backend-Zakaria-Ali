@@ -2,14 +2,51 @@
 
 include("connection.php");
 
-$f_name = $_POST["first_name"];
-$l_name = $_POST["last_name"];
-$gender = $_POST["gender"];
-$email = $_POST["email"];
-$password = hash("sha256", $_POST["password"]);
-$phone_number = $_POST["phone_number"];
+if(isset($_POST["first_name"])){
+    $f_name = $_POST["first_name"];
+} else {
+    die("Missing Values!");
+}
+
+if(isset($_POST["last_name"])){
+    $l_name = $_POST["last_name"];
+} else {
+    die("Missing Values!");
+}
+
+if(isset($_POST["email"])){
+    $email = $_POST["email"];
+} else {
+    die("Missing Values!");
+}
+
+if(isset($_POST["password"])){
+    $password = hash("sha256", $_POST["password"]);
+} else {
+    die("Missing Values!");
+}
+
+if(isset($_POST["phone_number"])){
+    $phone_number = $_POST["phone_number"];
+} else {
+    die("Missing Values!");
+}
+
+if(isset($_POST["gender"])){
+    $gender = $_POST["gender"];
+} else {
+    die("Missing Values!");
+}
+
+if(isset($_POST["city_id"])){
+    $city = $_POST["city_id"];
+} else {
+    die("Missing Values!");
+}
+
+
 $image = $_POST["image_url"];
-$city = $_POST["city_id"];
+
 $is_admin = 0;
 
 
