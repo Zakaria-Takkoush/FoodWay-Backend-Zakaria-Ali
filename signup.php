@@ -18,7 +18,7 @@ $query->bind_param("ssissssii", $f_name, $l_name, $gender, $email, $password, $p
 $query->execute();
 
 $response = [];
-$response["success"] = true;
+$response["status"] = "Account Created!";
 
 echo json_encode($response);
 
