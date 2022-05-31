@@ -32,9 +32,20 @@ if(isset($_POST["phone_number"])){
     die("Missing Values!");
 }
 
-$gender = $_POST["gender"];
+if(isset($_POST["gender"])){
+    $gender = $_POST["gender"];
+} else {
+    die("Missing Values!");
+}
+
+if(isset($_POST["city_id"])){
+    $city = $_POST["city_id"];
+} else {
+    die("Missing Values!");
+}
+
+
 $image = $_POST["image_url"];
-$city = $_POST["city_id"];
 
 $is_admin = 0;
 
