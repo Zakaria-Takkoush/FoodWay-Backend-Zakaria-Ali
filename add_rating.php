@@ -20,8 +20,8 @@ if($num_rows != 0)
     exit();
 }
 $query = $mysqli->prepare("INSERT INTO ratings(rating, user_id, resto_id) VALUES (?, ?, ?)");
-$query->bind_param("sii",$rating ,$user_id ,$resto_id);
-$query->execute();
+$query->bind_param("iii",$rating ,$user_id ,$resto_id);
+$query->execute();  
 
 $response = [];
 $response["success"] = true;
