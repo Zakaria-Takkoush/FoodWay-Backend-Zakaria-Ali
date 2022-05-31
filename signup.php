@@ -45,7 +45,7 @@ if(isset($_POST["city_id"])){
 }
 
 
-$image = $_POST["image_url"];
+//$image = $_POST["image_url"];
 
 $is_admin = 0;
 
